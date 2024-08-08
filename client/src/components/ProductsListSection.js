@@ -9,7 +9,7 @@ function ProductsListSection(id) {
     },
     {
         id: "prod_Qbl8Bn9tzdQAPg",
-        image: 'https://as1.ftcdn.net/v2/jpg/01/99/56/52/1000_F_199565283_bFeqVr0L9JNYwTPus3rOUIFQa9ACc0K4.jpg',
+        image: 'https://as2.ftcdn.net/v2/jpg/07/35/03/77/1000_F_735037764_GiwFFxqulLwR9DNhlyiL8P15Y8ZQTVml.webp',
         title: "Ethically Sourced Shirt",
         description: "This is a description of the shirt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ornare ex sed tortor lacinia bibendum. Proin eros velit, auctor ut eros quis, pretium malesuada urna. Ut eu metus non est hendrerit accumsan.",
         price: 39.99
