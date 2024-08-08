@@ -52,7 +52,7 @@ function PaymentForm() {
           amount: totalPrice*100,
           id
         })
-
+        
         if (response.data.success) {
           console.log("Successful Payment")
           dispatch(clearCart())
