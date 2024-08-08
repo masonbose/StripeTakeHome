@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   categories: [],
-  // products: [],
   loading: false,
   isCategoriesFetched: false,
   totalCount: 0,
