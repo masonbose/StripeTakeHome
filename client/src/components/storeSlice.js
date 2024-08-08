@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   categories: [],
+  // products: [],
   loading: false,
   isCategoriesFetched: false,
   totalCount: 0,
@@ -10,10 +11,21 @@ const initialState = {
   isPaymentSuccessful: false,
 };
 
+export const fetchCategories = createAsyncThunk(
+  'store/fetchCategories',
+  async () => {
+    const response = await fetch('https://fakestoreapi.com/products/categories')
+    .then((res) => res.json())
+    
+    return response;
+  }
+);
+
 const storeSlice = createSlice({
   name: "store",
   initialState: initialState,
   reducers: {
+    // reducers go here
     addToCart: (state, action) => {
       const existingCartItemIndex = state.cartItems.findIndex(
         cartItem => cartItem.id === action.payload.id
@@ -75,6 +87,21 @@ const storeSlice = createSlice({
       state.isPaymentSuccessful = true
     }
   },
+  extraReducers: {
+    [fetchCategories.pending]: (state, action) => {
+      state.loading = true;
+      state.isCategoriesFetched = false;
+    },
+    [fetchCategories.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.isCategoriesFetched = true;
+      state.categories = action.payload;
+    },
+    [fetchCategories.rejected]: (state, action) => {
+      state.loading = false;
+      state.isCategoriesFetched = false;
+    },
+  }
 })
 
 export const {

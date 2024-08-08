@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(cors());
 
-// Stripe
+// Stripe payment
 app.post("/payment", cors(), async (req, res) => {
   let { amount, id } = req.body;
 
